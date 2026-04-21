@@ -1,0 +1,25 @@
+---
+//@ts-nocheck
+import Layout from "../layouts/Layout.astro";
+import Kunstner from "./kunstner.astro";
+
+
+const url =`${import.meta.env.SUPABASE_URL}/rest/v1/artistCard?select=*`;
+const apiKey = import.meta.env.SUPABASE_PUBLISHABLE_KEY;
+
+const options = {
+  headers: {
+    apikey: apiKey,
+  },
+};
+
+const data = await fetch(url, options)
+  .then((res) => res.json());
+
+console.log(data);
+---
+
+<Layout title="Program">
+    <h1>Program</h1>
+    {data.map((artist) => <artist ={artist} />)}
+</Layout>
