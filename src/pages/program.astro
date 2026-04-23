@@ -3,23 +3,53 @@
 import Layout from "../layouts/Layout.astro";
 import Kunstner from "../components/Kunstner.astro";
 
-
-const url =`${import.meta.env.SUPABASE_URL}/rest/v1/artistCard?select=*`;
+const url = `${import.meta.env.SUPABASE_URL}/rest/v1/artistCard?select=*`;
 const apiKey = import.meta.env.SUPABASE_PUBLISHABLE_KEY;
 
 const options = {
   headers: {
     apikey: apiKey,
-  }
+  },
 };
 
-const data = await fetch(url, options)
-  .then((res) => res.json());
+const data = await fetch(url, options).then((res) => res.json());
 
 console.log(data);
 ---
 
 <Layout title="Program">
+  <div class="hero">
+    <img src="public/img/program.webp" alt="Band" />
     <h1>Program</h1>
-    {data.map((artist) => <Kunstner artist ={artist} />)}
+  </div>
+
+  {data.map((artist) => <Kunstner artist={artist} />)}
 </Layout>
+
+<style>
+  /* hero */
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hero {
+    position: relative;
+  }
+
+  .hero h1 {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* mobil */
+  @media (max-width: 900px) {
+    .hero h1 {
+      font-size: 75px;
+      top: 10%;
+    }
+  }
+</style>
