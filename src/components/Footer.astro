@@ -3,5 +3,90 @@
 ---
 
 <footer>
-    <p>Info hey</p>
+<div class="grid_footer">
+
+    <div class="grid_tekst">
+        <p> <b>KONTAKT OS</b></p>
+        <p>Spørgsmål, samarbejde, generel info: <br>info@hoestmoen.dk</p>
+        <p>Booking: <br>booking@hoestmoen.dk</p>
+        <p>Produktion (scene, plads, infrastruktur): <br>produktion@hoestmoen.dk</p>
+        <p>Frivillige: <br>frivillig@hoestmoen.dk</p>
+    </div>
+
+    <div class="footer_logo">
+      <img src="/public/img/logo.png" alt="logo">
+    </div>
+      <div class="grid_some">
+        <img src="/public/img/facebook.png" alt="facebook logo">
+        <img src="/public/img/instagram.png" alt="instagram logo">
+      </div>
+
+</div>
+
 </footer>
+
+<style>
+    body {
+    margin: 0;}
+
+    footer{
+        text-align: center;
+         background-color: var(--color-footer);
+         padding: 80px 20px;
+    }
+
+    .grid_footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        align-items: center;
+    }
+.grid_tekst{
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+.footer_logo{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+}
+
+    .grid_some{
+        grid-column: 2/3;
+        grid-row: 2/3;
+        display: flex;
+        gap: 10px;
+        justify-self: center ;
+        align-self: start;
+    }
+    .grid_some img{
+        width: 50px;
+    }
+
+    @media (min-width: 800px){
+        .grid_footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        align-items: center;
+    }
+    .grid_tekst{
+        grid-column: 1;
+    }
+    .footer_logo{
+grid-column: 2;
+    }
+    .grid_some{
+        grid-column: 3;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        align-self: unset;
+        gap: 20px;
+        align-items: center;
+    }
+
+}
+
+</style>

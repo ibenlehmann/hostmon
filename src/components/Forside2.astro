@@ -1,0 +1,123 @@
+
+<article class="forside_teaser">
+    <div class="img_hav">
+    <img src="/public/img/havudsigt.webp" alt="billede af havudsigt">
+</div>
+<div class="text_hav">
+    <h3>FESTIVAL MED HAVUDSIGT</h3>
+    <p>Vi er sikkert stadig sommerens sidste skrig, og vores enorme ambitioner er uændrede. 
+        Høst Møn er en musikfestival for folk, der elsker begge dele: musik og festival. 
+        Vi er til for mennesker, der gerne vil lytte til musikken. 
+        Vi booker bredt fra dit yndlingsband til de små spillesteders snavsede juveler.</p>
+        <div class="cta_btn">
+<button><a href="/src/pages/om.astro">OM OS</a></button>
+</div>
+</div>
+<div class="img_spisning">
+<img src="/public/img/spisning.webp" alt="fællesspisning">
+</div>
+<div class="text_spisning">
+<h3>FÆLLESSPISNING</h3>
+<p>Høst Møn er andet og meget mere end koncerter med havudsigt, dansefest under åben himmel og camping med træk&slip.
+     Det er også en fest, der kredser - og kræser- om det fælles måltid, og Høst Møns Madjunta har udfoldet 
+     nedenstående manifest for måltidet på Høst Møn. </p>
+     <div class="cta_btn">
+     <button> <a href="/src/pages/faellesspisning.astro">LÆS MERE</a></button>
+     </div>
+    </div>
+</article>
+
+<article class="lokation">
+<h2>LOKATION</h2>
+<div class="grid_lokation">
+<div>
+    <img src="/public/img/lokation.webp" alt="lokation">
+</div>
+<div class="lokation_tekst">
+    <p>Høst Møn er tilbage! Hold din øl! Hent din pung! I sidste weekend af august holder vi Høst Møn på Masnedøfortet. 
+    Det er lige uden for Vordingborg, så transporten er lettere, bølgerne er højere, og udsigten er stadigvæk Falster.</p>
+    <p><b>28. aug. 2026 12:00 - 29. aug. 2026 23:00 <br>
+    Fortvej 8, 4760, Vordingborg</b></p>
+</div>
+</div>
+</article>
+
+<style>
+    .forside_teaser{
+        background-color: var(--color-black);
+        padding: 80px 100px;
+        color: var(--color-pink)
+    }
+h3{
+    font-size: 1.5rem;
+}
+.cta_btn{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+}
+a{
+    text-decoration: none;
+    color: var(--color-yellow);
+}
+    .lokation{
+        background-color: var(--color-yellow);
+        padding: 20px 100px;
+    }
+    h2{
+        text-align: center;
+        font-size: 3rem;
+    }
+    .lokation p {
+        color: var(--color-red);
+        padding-top: 20px;
+    }
+
+    @media (min-width: 800px){
+.forside_teaser{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr 1fr 0.5fr;
+    gap: 10px;
+}
+.img_hav{
+    grid-column: 1/3;
+    grid-row: 1/4;
+}
+.text_hav{
+    grid-column: 3/6;
+    grid-row: 1/2;
+    padding-left: 60px;
+}
+.img_spisning{
+    grid-column: 2/4;
+    grid-row: 3/5;
+}
+.text_spisning{
+    grid-column: 4/6;
+    grid-row: 2/5;
+    padding-left: 60px;
+    padding-top: 40px;
+}
+.cta_btn{
+    justify-content: start;
+}
+
+.grid_lokation{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    padding: 30px 100px;
+    padding-bottom: 80px;
+}
+
+.lokation_tekst{
+    place-self: center;
+}
+h2{
+    font-size: 5rem;
+    margin: 0px;
+    padding-top: 50px;
+}
+    }
+</style>
