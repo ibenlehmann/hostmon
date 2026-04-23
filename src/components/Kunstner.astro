@@ -4,8 +4,12 @@ const { artist } = Astro.props;
 
 <article class="card">
   <div class="img_box">
-    <img src="public/img/spawner.webp" alt="artist" />
-    <button><a href="https://open.spotify.com/">LYT HER</a></button>
+    <img src={artist.img} alt="artist" />
+    <button
+      ><a href={artist.musik} target="_blank" rel="noopener noreferrer"
+        >LYT HER</a
+      ></button
+    >
   </div>
   <div class="text_box">
     <div>
@@ -13,8 +17,8 @@ const { artist } = Astro.props;
       <p class="info">{artist.info}</p>
     </div>
     <div class="box">
-      <p class="bold">D. 28 august</p>
-      <p class="bold">Kl. 18:30</p>
+      <p class="bold">{artist.date}</p>
+      <p class="bold">{artist.time}</p>
     </div>
   </div>
 </article>
